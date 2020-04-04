@@ -20,7 +20,7 @@ relations = [F_gens[1], F_gens[0]^2 * F_gens[2]^-1 * F_gens[0]^-1 * F_gens[2] * 
 K = F.quotient(relations)
 l = F_gens[0]^3 * F_gens[2] * F_gens[0]^-1 * F_gens[2]^-1 * F_gens[0]^-1 * F_gens[2] * F_gens[0]^-1
 
-relations2 = [F_gens[0]^-3 * F_gens[2]^-1 * F_gens[0] * F_gens[2] * F_gens[0] * F_gens[2]^-1 * F_gens[0] * F_gens[2]]
+relations2 = [F_gens[1], F_gens[0]^-3 * F_gens[2]^-1 * F_gens[0] * F_gens[2] * F_gens[0] * F_gens[2]^-1 * F_gens[0] * F_gens[2] * F_gens[2]^-1]
 K2 = F.quotient(relations2)
 l2 = F_gens[0]^-2 * F_gens[2] * F_gens[0] * F_gens[2]^-1 * F_gens[0] * F_gens[2]
 
