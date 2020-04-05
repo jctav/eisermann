@@ -3,10 +3,10 @@ def eisermann(K, G, x, l):
     G_elements = [e for e in G]
 
     import itertools
-    combinations = itertools.combinations(G_elements, len(k_gens)-2)
+    comb = itertools.combinations_with_replacement(G_elements, len(k_gens)-2)
 
     failed = 0
-    for e in combinations:
+    for e in comb:
         try:
             f = K.hom([x, G.one()] + list(e))
             print(f(l))

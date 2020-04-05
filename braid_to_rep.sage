@@ -10,7 +10,6 @@ def braid_to_rep(B):
 
     twists = B.Tietze()
     for t in twists:
-        print(relations)
         y_t = relations[abs(t)]
         y_t_1 = relations[abs(t)+1]
         m = relations[0]
