@@ -8,19 +8,17 @@ from sage.groups.perm_gps.permgroup_named import SymmetricGroup
 S = SymmetricGroup(5)
 x = S.gens()[0]
 
-trefoil_braid = BraidGroup(2)([1,1,1])
-K, l = braid_to_rep(trefoil_braid)
+eight_braid = BraidGroup(3)([1,-2,1,-2])
+K, l = braid_to_rep(eight_braid)
 
-print('Trefoil')
+print('Eight')
 print('K: ' + str(K))
 print('S: ' + str(S))
 print('x: ' + str(x))
 print('l: ' + str(l))
 eisermann(K, S, x, l)
 
-print()
-
-mirror_braid = BraidGroup(2)([-1,-1,-1])
+mirror_braid = BraidGroup(3)([-1,2,-1,2])
 K2, l2 = braid_to_rep(mirror_braid)
 
 print('Mirror')
