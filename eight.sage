@@ -18,7 +18,7 @@ print('x: ' + str(x))
 print('l: ' + str(l))
 eisermann(K, S, x, l)
 
-mirror_braid = BraidGroup(3)([-1,2,-1,2])
+mirror_braid = BraidGroup(3)([2,-1,2,-1])
 K2, l2 = braid_to_rep(mirror_braid)
 
 print('Mirror')
