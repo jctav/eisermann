@@ -1,28 +1,30 @@
 import sage.all 
 
 def braid_to_rep(B):
-    num_gens = B.strands() + 1
+    num_gens = B.strands() + 1 # Plus the meridian
     F = FreeGroup(['m'] + ['y' + str(i+1) for i in range(num_gens-1)])
 
     F_gens = list(F.gens())
     relations = list(F.gens())
-    relations[1] = F.one()
+    relations[1] = F.one() # y1 is known to be 1
 
-    twists = B.Tietze()
-    for t in twists:
-        y_t = relations[abs(t)]
-        y_t_1 = relations[abs(t)+1]
+    braid_word = B.Tietze()
+    for sigma in braid_word:
+        idx = abs(sigma)
+        y_l = relations[idx]   # y_{t}
+        y_r = relations[idx+1] # y_{t+1}
         m = relations[0]
 
-        if t > 0:
-            relations[t+1] = y_t
-            relations[t] = m * y_t_1 * y_t^-1 * m^-1 * y_t
+        if sigma > 0:
+            relations[idx] = m * y_r * y_l^-1 * m^-1 * y_l
+            relations[idx+1] = y_l
         else:
-            relations[abs(t)] = y_t_1
-            relations[abs(t)+1] = m^-1 * y_t * y_t_1^-1 * m * y_t_1
+            relations[idx] = y_r
+            relations[idx+1] = m^-1 * y_l * y_r^-1 * m * y_r
 
-    l = relations[1]
-    relations[1] = F_gens[1]
+    l = relations[1]             # longitude
+    relations[1] = F_gens[1]     # because y_1 = 1
+
     for i in range(2, num_gens):
         relations[i] = relations[i] * F_gens[i]^-1
 
