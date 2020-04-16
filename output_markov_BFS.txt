@@ -1,0 +1,11 @@
+(1, -2, 1, -2) # Eight knot
+
+Apply -> Markov 2A with i=1
+
+(-1,1,-2, 1, -2, 1) = (-2, 1, -2, 1)
+
+Apply -> Markov 2A with i=1
+(-1, -2, 1, -2, 1, 1)
+
+Apply -> Markov 2A wiht i=2
+(-2, -1, -2, 1, -2, 1, 1, 2) = (2, -1, 2, -1) # Mirror knot
