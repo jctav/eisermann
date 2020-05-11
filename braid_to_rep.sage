@@ -16,11 +16,11 @@ def braid_to_rep(B):
         m = relations[0]
 
         if sigma > 0:
-            relations[idx] = m * y_r * y_l^-1 * m^-1 * y_l
+            relations[idx] = m^-1 * y_r * y_l^-1 * m * y_l
             relations[idx+1] = y_l
         else:
             relations[idx] = y_r
-            relations[idx+1] = m^-1 * y_l * y_r^-1 * m * y_r
+            relations[idx+1] = m * y_l * y_r^-1 * m^-1 * y_r
 
     l = relations[1]             # longitude
     relations[1] = F_gens[1]     # because y_1 = 1
