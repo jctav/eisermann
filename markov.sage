@@ -27,7 +27,7 @@ def markov_BFS(B, depth=1):
         M_1 = markov_move(cur_braid, (-1,'AB'))
         queue.append([M_1, cur_depth+1, (cur_braid, (-1, 'AB'))])
 
-        for k in range(1, cur_braid.strands()):
+        for k in range(2, cur_braid.strands()):
             M2A = markov_move(cur_braid, (2, 'A', k))
             queue.append([M2A, cur_depth+1, (cur_braid, (2,'A',k))])
 
